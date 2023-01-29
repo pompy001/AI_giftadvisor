@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Product Name</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <style>
+      .logo {
+        text-align: center;
+        margin: 20px 0;
+      }
+      .logo img {
+        width: 50%;
+      }
+      @media (max-width: 576px) {
+      .card-deck .card {
+      width: 100%;
+      margin-bottom: 10px;
+      }
+      }
+      </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img src="/static/images/logo1.png" alt="Logo">
+      </div>
+      <h2 class="text-center mt-3">giftncrafts would suggest {{quer}}</h2>
+      <h3 class="text-center mt-5" style="color:#f73073;">Here are some gifts related to this</h3>
+      <div class="card-deck mt-3">
+            {% for product in product_name %}
+            <div class="col-md-4">
+              <div class="card">
+                <img src="{{ product.thumbnail }}" class="card-img-top img-fluid" alt="{{ product.title }}"style="max-width: 100%; max-height: 100%; object-fit: cover;">
+                <div class="card-body">
+                  <h5 class="card-title">{{ product.title }}</h5>
+                  <p class="card-text">{{ product.price }}</p>
+                  <a href="{{ product.link }}" class="btn btn-primary" style="background-color:#f73073;">View Product</a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

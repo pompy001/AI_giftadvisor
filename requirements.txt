@@ -1,0 +1,4 @@
+flask==2.2.2
+google-search-results==2.4.1
+openai==0.26.3
+flask-cors==3.0.10
